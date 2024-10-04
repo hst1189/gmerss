@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html data-color-mode="light" data-dark-theme="dark_colorblind" data-light-theme="light">
+
 <!--
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="content-type" />
@@ -21,47 +22,44 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
-    <script src='https://grapehut.us.kg/assets/RonanTheme.js'></script>
-    <script src='https://grapehut.us.kg/assets/GmeekVercount.js'></script>
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
+    <script src='https://www.grapehut.us.kg/assets/RonanTheme.js'></script>
+    <script src='https://www.grapehut.us.kg/assets/GmeekVercount.js'></script>
     <script src='https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js'></script>
     <script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9661896697976587' crossorigin='anonymous'></script>
-    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
-    <meta name="description" content="Stay hungry. Stay foolish. --Steven Jobs">
-    <meta property="og:title" content="小饅頭の部屋">
-    <meta property="og:description" content="Stay hungry. Stay foolish. --Steven Jobs">
-    <meta property="og:type" content="blog">
-    <meta property="og:url" content="https://grapehut.us.kg">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg">
-<title>小饅頭の部屋</title>
+    <title>小饅頭の部屋</title>
 </head>
 
 
-
-
-  
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
 #header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer{margin-top:64px; text-align: center;font-size: small;}
+.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;}
+.avatar:hover{transform: scale(1.15) rotate(360deg);}
+#header h1 a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-family:Monaco;margin-left:8px;}
 h1 a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;}
 .title-right{display:flex;margin:auto 0 0 auto;}
-.title-right .circle{padding: 14px 16px;margin-right:8px;}
+.title-right button{margin-right:8px;padding:16px;}
+.title-right .circle{padding: 14px 16px;}
+.SideNav{min-width: 360px;}
 .SideNav-icon{margin-right: 16px}
-.SideNav-item .Label{color: #fff;margin-left:8px;}
+.SideNav-item .Label{color: #fff;margin-left:4px;}
 .genTime{float: right;}
 .d-flex{min-width:0;}
 .listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
-.listLabels{white-space:nowrap;}
+.listLabels{white-space:nowrap;display:flex;}
+.listLabels object{max-height:16px;max-width:24px;}
 
-@media (max-width: 767px) {
-    body { padding: 8px;}
-    h1 a{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .avatar {width:40px;height:40px;}
+    .blogTitle{display:none;}
+    #buttonRSS{display:none;}
     .LabelTime{display:none;}
-    .subTitle{display:none;}
-    .genTime{float: none;}
 }
 </style>
-
-    
+  
 <!--
 <style>
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
@@ -97,9 +95,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 
 
-
 <body>
-
 <!--
     <div id="header">
         <h1><a href="https://github.com/Meekdai/Gmerss" target="_blank">Gmerss</a></h1>
@@ -116,7 +112,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div id="header">
 <h1><img src="https://github.githubassets.com/favicons/favicon.svg" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">小饅頭の部屋</a></h1>
 <div class="title-right">
-    <a href="https://grapehut.us.kg/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索">
+    <a href="https://www.grapehut.us.kg/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索">
         <svg class="octicon" width="16" height="16" >
             <path id="pathSearch" fill-rule="evenodd"></path>
         </svg>
@@ -126,12 +122,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <path id="music" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a href="https://grapehut.us.kg/about.html" class="btn btn-invisible circle" title="About Me">
+    <a href="https://www.grapehut.us.kg/about.html" class="btn btn-invisible circle" title="About Me">
         <svg class="octicon" width="16" height="16" >
             <path id="About Me" fill-rule="evenodd"></path>
         </svg>
     </a>
-    <a href="https://grapehut.us.kg/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
+    <a href="https://www.grapehut.us.kg/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
         <svg class="octicon" width="16" height="16" >
             <path id="pathRSS" fill-rule="evenodd"></path>
         </svg>
@@ -142,14 +138,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
 </div>
-
-    
+   
     <div id="content">
-        <div style="margin-bottom: 16px;"><span class="subTitle">A RSS-Reader All in Github</span><span class="genTime"></span></div>
+        <div style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></div>
     </div>
+
     <nav class="SideNav border"></nav>
 
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://grapehut.us.kg">小饅頭の部屋</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://www.grapehut.us.kg">小饅頭の部屋</a></div>
     <div id="footer2"><span id="filingNum"><a href="https://beian.miit.gov.cn/" target="_blank"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a></a> • </span>
 </body>
 
@@ -162,6 +158,11 @@ let IconList={
     "moon":"M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z",
     "post":"M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z",
     "weekly":"M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z",
+    "search":"M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z",
+    "rss":"M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z",
+    "music":"M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z",
+    "about":"M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM5.78 8.75a9.64 9.64 0 0 0 1.363 4.177c.255.426.542.832.857 1.215.245-.296.551-.705.857-1.215A9.64 9.64 0 0 0 10.22 8.75Zm4.44-1.5a9.64 9.64 0 0 0-1.363-4.177c-.307-.51-.612-.919-.857-1.215a9.927 9.927 0 0 0-.857 1.215A9.64 9.64 0 0 0 5.78 7.25Zm-5.944 1.5H1.543a6.507 6.507 0 0 0 4.666 5.5c-.123-.181-.24-.365-.352-.552-.715-1.192-1.437-2.874-1.581-4.948Zm-2.733-1.5h2.733c.144-2.074.866-3.756 1.58-4.948.12-.197.237-.381.353-.552a6.507 6.507 0 0 0-4.666 5.5Zm10.181 1.5c-.144 2.074-.866 3.756-1.58 4.948-.12.197-.237.381-.353.552a6.507 6.507 0 0 0 4.666-5.5Zm2.733-1.5a6.507 6.507 0 0 0-4.666-5.5c.123.181.24.365.353.552.714 1.192 1.436 2.874 1.58 4.948Z",
+
 };
 
 if(localStorage.getItem("meek_theme")==null){localStorage.setItem("meek_theme","light");changeLight();}
@@ -274,11 +275,9 @@ for(var i=0;i<iconTOP.length;i++){
 for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
 }
-
-
 document.getElementById("music").setAttribute("d",value=IconList["music"]);
 document.getElementById("About Me").setAttribute("d",value=IconList["about"]);
 </script>
 
+        
 </html>
-

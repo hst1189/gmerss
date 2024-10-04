@@ -10,6 +10,12 @@ displayMax=30 # 每个RSS最多抓取数 #抓一个月
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
+    "HelloGitHub月刊<":{
+        "url":"https://hellogithub.com/rss",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#df7150"
+    },
     "独立开发变现":{
         "url":"https://www.ezindie.com/feed/rss.xml",
         "type":"weekly",
@@ -22,11 +28,11 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#93bd76"
     },
-    "1Link":{
-        "url":"https://1link.fun/index.xml",
+    "老胡的周刊":{
+        "url":"https://weekly.howie6879.com/rss/rss.xml",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#7479dc"
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
+        "nameColor":"#A333D0"
     },
     "阮一峰":{
         "url":"http://www.ruanyifeng.com/blog/atom.xml",
@@ -34,11 +40,11 @@ rssBase={
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
         "nameColor":"#1f883d"
     },
-    "老胡的周刊":{
-        "url":"https://weekly.howie6879.com/rss/rss.xml",
+    "1Link":{
+        "url":"https://1link.fun/index.xml",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
-        "nameColor":"#A333D0"
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#7479dc"
     },
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",
@@ -99,7 +105,7 @@ for rss in rssBase:
             print("Warning: 'published' key not found in entry")
 
             
-print("====== Start sorted %d list ======"%(len(rssAll)-1))
+# print("====== Start sorted %d list ======"%(len(rssAll)-1))
 # rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
 
 if not os.path.exists('docs/'):

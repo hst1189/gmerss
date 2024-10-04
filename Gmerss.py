@@ -16,18 +16,6 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#a4244b"
     },
-    "夜枫":{
-        "url":"https://yefengs.com/feed",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#b8d101"
-    },
-    "kn007":{
-        "url":"https://kn007.net/feed/",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#e76976"
-    },
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",
@@ -112,7 +100,7 @@ for rss in rssBase:
 
             
 print("====== Start sorted %d list ======"%(len(rssAll)-1))
-rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
+rssAll=sorted(rssAll,key=lambda e:e.__getitem__("link"),reverse=True)
 
 if not os.path.exists('docs/'):
     os.mkdir('docs/')

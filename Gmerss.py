@@ -22,12 +22,6 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#93bd76"
     },
-    "豌豆花下猫":{
-        "url":"https://pythoncat.top/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#bc4c00"
-    },
     "1Link":{
         "url":"https://1link.fun/index.xml",
         "type":"weekly",
@@ -45,6 +39,12 @@ rssBase={
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
         "nameColor":"#A333D0"
+    },
+    "豌豆花下猫":{
+        "url":"https://pythoncat.top/rss.xml",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#bc4c00"
     },
     "Meekdai":{
         "url":"https://blog.meekdai.com/rss.xml",
@@ -100,7 +100,7 @@ for rss in rssBase:
 
             
 print("====== Start sorted %d list ======"%(len(rssAll)-1))
-rssAll=sorted(rssAll,key=lambda e:e.__getitem__("link"),reverse=True)
+# rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
 
 if not os.path.exists('docs/'):
     os.mkdir('docs/')

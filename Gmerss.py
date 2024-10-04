@@ -5,8 +5,8 @@ import time
 import feedparser
 
 ######################################################################################
-displayDay=7 # 抓取多久前的内容
-displayMax=2 # 每个RSS最多抓取数
+displayDay=30 # 抓取多久前的内容  #抓一个月
+displayMax=30 # 每个RSS最多抓取数 #抓一个月
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={

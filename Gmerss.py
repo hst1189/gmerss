@@ -13,7 +13,7 @@ rssBase={
     "HelloGitHub月刊<":{
         "url":"https://hellogithub.com/rss",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#df7150"
     },
     "独立开发变现":{

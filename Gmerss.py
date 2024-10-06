@@ -57,6 +57,12 @@ rssBase={
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#df7150"
+    },
+    "老王写真乐园关注":{
+        "url":"https://www.laowangidol.cc/feed/",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#df7150"
     }
 }
 ######################################################################################

@@ -10,54 +10,69 @@ displayMax=30 # 每个RSS最多抓取数 #抓一个月
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    "HelloGitHub月刊<":{
+    "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#df7150"
     },
+    
+    "小众软件":{
+        "url":"https://feeds.appinn.com/appinns/",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#df7150"
+    },
+    
     "独立开发变现":{
         "url":"https://www.ezindie.com/feed/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#a4244b"
     },
+    
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#93bd76"
     },
+    
     "老胡的周刊":{
         "url":"https://weekly.howie6879.com/rss/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
         "nameColor":"#A333D0"
     },
+    
     "阮一峰":{
         "url":"http://www.ruanyifeng.com/blog/atom.xml",
         "type":"weekly",
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
         "nameColor":"#1f883d"
     },
+    
     "1Link":{
         "url":"https://1link.fun/index.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#7479dc"
     },
+    
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
     },
+    
     "Meekdai":{
         "url":"https://blog.meekdai.com/rss.xml",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#df7150"
     },
+    
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.cc/feed/",
         "type":"post",

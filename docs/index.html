@@ -203,6 +203,12 @@ function showList(jsonData){
 
     let SideNav=document.getElementsByClassName("SideNav")[0];
     for(let i=1;i<jsonData.length;i++){
+
+        // <div class="lists chrome" style="display: block;">
+        //     <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="
+        let lists=document.createElement("div");
+        item.setAttribute("class","lists " & jsonData[i]['name'] );
+        item.setAttribute("style","display: block;");
         
         let item=document.createElement("a");
         item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");

@@ -224,8 +224,8 @@ function showList(jsonData){
     //jsonData['labelColorDict']["All"]="#000";
     
     labelsCount["All"]=0;
+    labelsCount["All"]["labelColor"]=#000;
     for (let key in jsonData) {
-        alert(key)
         if (key != 0) {
             labelsCount["All"]++;
             let label = jsonData[key]['name']
@@ -233,14 +233,21 @@ function showList(jsonData){
         }
     }
 
+    for (let label in labelsCount) {
+        for(let i=1;i<jsonData.length;i++){
+            if(label==jsonData[0]["rssBase"][jsonData[i]['name']]){
+                labelsCount[label]["labelColor"] = jsonData[0]["rssBase"][jsonData[i]['name']]['nameColor']     
+            }
+        }
+    }
+    
     //let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
-
     for (let label in labelsCount) {
         tagList.push(label);
         
         let showLabels = document.createElement("button");
         showLabels.setAttribute("class", "Label");
-        showLabels.setAttribute("style", "background-color:" + label +";padding:4px;");
+        showLabels.setAttribute("style", "background-color:" + labelsCount[label]["labelColor"] +";padding:4px;");
         showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
         showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
 

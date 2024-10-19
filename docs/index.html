@@ -152,6 +152,10 @@ let IconList={
     "about":"M10.561 8.073a6.005 6.005 0 0 1 3.432 5.142.75.75 0 1 1-1.498.07 4.5 4.5 0 0 0-8.99 0 .75.75 0 0 1-1.498-.07 6.004 6.004 0 0 1 3.431-5.142 3.999 3.999 0 1 1 5.123 0ZM10.5 5a2.5 2.5 0 1 0-5 0 2.5 2.5 0 0 0 5 0Z"
     };
 
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
+document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
+
 if(localStorage.getItem("meek_theme")==null){localStorage.setItem("meek_theme","light");changeLight();}
 else if(localStorage.getItem("meek_theme")=="dark"){changeDark();}
 else if(localStorage.getItem("meek_theme")=="light"){changeLight();}
@@ -170,11 +174,6 @@ function modeSwitch(){
     if(document.getElementsByTagName("html")[0].attributes[0].value=="light"){changeDark();localStorage.setItem("meek_theme","dark");}
     else{changeLight();localStorage.setItem("meek_theme","light");}
 }
-
-
-document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
 
 iconTOP=document.getElementsByClassName("svgTop1");
 iconPost=document.getElementsByClassName("svgTop0");
@@ -202,10 +201,11 @@ function formatTime(time,needHMS=false){
 }
 
 
-
 tagList=[];
 labelsCount={};
-jsonData='';
+
+alert("showList");
+
 let requestJson="rssAll.json"
 let request=new XMLHttpRequest();
 request.open("GET",requestJson);
@@ -214,13 +214,13 @@ request.send();
 request.onload=function(){
     jsonData=JSON.parse(request.response);
     console.log(jsonData);
+    alert("showList");
     showList(jsonData);
 }
 
 
 
 function showList(jsonData){
-    alert("showList");
 
     // <div id="taglabel" style="margin-bottom:8px;"></div>
     let taglabel=document.getElementById("taglabel");

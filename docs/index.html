@@ -226,7 +226,7 @@ function showList(jsonData){
     labelsCount["All"]=0;
     for (let key in jsonData) {
         alert(key)
-        if (key !== 0) {
+        if (key != 0) {
             labelsCount["All"]++;
             for (let label of jsonData[key]['name']) {
                 labelsCount[label] = (labelsCount[label] || 0) + 1;

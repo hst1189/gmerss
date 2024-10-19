@@ -118,7 +118,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </div>
         -->
         
-        <span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>
+        <!--<span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>-->
         <div class="title-right">
             <div class="subnav-search">
                 <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
@@ -322,8 +322,8 @@ function updateShowTag(label){
 
 function setClassDisplay(label){
     let lists = document.getElementsByClassName("lists");
-    let tagTitle = document.getElementsByClassName("tagTitle")[0];
-    tagTitle.innerHTML="Tag #"+label;
+    //let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    //tagTitle.innerHTML="Tag #"+label;
     document.title=label+" - 小饅頭の部屋";
     document.getElementsByClassName("subnav-search-input")[0].value='';
     if(label=="All"){
@@ -349,9 +349,9 @@ function setClassDisplay(label){
 
 function searchShow(){
     let lists = document.getElementsByClassName("lists");
-    let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    //let tagTitle = document.getElementsByClassName("tagTitle")[0];
     let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
-    tagTitle.innerHTML="Search #"+searchInput;
+    //tagTitle.innerHTML="Search #"+searchInput;
     if(searchInput==''){document.title="Search - 小饅頭の部屋";}
     else{document.title=searchInput+" - 小饅頭の部屋";}
     let a=0;

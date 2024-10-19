@@ -14,7 +14,7 @@ rssBase={
         "url":"https://hellogithub.com/rss",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
-        "nameColor":"#df7150"
+        "nameColor":"#d00150"
     },
     
     "小众软件":{
@@ -70,14 +70,14 @@ rssBase={
         "url":"https://blog.meekdai.com/rss.xml",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#df7150"
+        "nameColor":"#df3450"
     },
     
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.cc/feed/",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#df7150"
+        "nameColor":"#563150"
     }
 }
 ######################################################################################

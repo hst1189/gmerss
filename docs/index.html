@@ -207,7 +207,7 @@ function showList(jsonData){
         // <div class="lists chrome" style="display: block;">
         //     <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="
         let lists=document.createElement("div");
-        item.setAttribute("class","lists " & jsonData[i]['name'] );
+        item.setAttribute("class","lists "+jsonData[i]['name'].join(" "));
         item.setAttribute("style","display: block;");
         
         let item=document.createElement("a");
@@ -247,10 +247,11 @@ function showList(jsonData){
 
         item.appendChild(center);
         item.appendChild(listLabels);
-        SideNav.appendChild(item)
+
+        lists.appendChild(item);
+        SideNav.appendChild(lists);
 
     }
-
 }
 
 console.log("\n %c Gmerss %c Meekdai/Gmerss \n\n", "color: #fff; background-image: linear-gradient(90deg, rgb(47, 172, 178) 0%, rgb(45, 190, 96) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(45, 190, 96) 0%, rgb(255, 255, 255) 100%); padding:5px 0;");

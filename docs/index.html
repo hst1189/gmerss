@@ -172,6 +172,27 @@ function modeSwitch(){
 }
 
 
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
+document.getElementById("music").setAttribute("d",value=IconList["music"]);
+document.getElementById("About Me").setAttribute("d",value=IconList["about"]);
+document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
+
+iconTOP=document.getElementsByClassName("svgTop1");
+iconPost=document.getElementsByClassName("svgTop0");
+for(var i=0;i<iconTOP.length;i++){
+    iconTOP[i].setAttribute("d",IconList["upload"]);
+    iconTOP[i].parentNode.style.color="red";
+}
+for(var i=0;i<iconPost.length;i++){
+    iconPost[i].setAttribute("d",IconList["post"]);
+}
+
+
+
+tagList=[];
+labelsCount={};
+jsonData='';
 let requestJson="rssAll.json"
 let request=new XMLHttpRequest();
 request.open("GET",requestJson);
@@ -197,19 +218,50 @@ function formatTime(time,needHMS=false){
     else{return Y+M+D}
 }
 
+
 function showList(jsonData){
+    // <div id="taglabel" style="margin-bottom:8px;"></div>
+    let taglabel=document.getElementById("taglabel");
+    jsonData['labelColorDict']["All"]="#000";
+    labelsCount["All"]=0;
+    for (let key in jsonData) {
+        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['labels'])) {
+            labelsCount["All"]++;
+            for (let label of jsonData[key]['labels']) {
+                labelsCount[label] = (labelsCount[label] || 0) + 1;
+            }
+        }
+    }
+
+    let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
+    for (let label of sortedLabelsList) {
+        tagList.push(label);
+        let showLabels = document.createElement("button");
+        showLabels.setAttribute("class", "Label");
+        showLabels.setAttribute("style", "background-color:" + jsonData['labelColorDict'][label]+";padding:4px;");
+        showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
+        showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
+
+        let LabelNum=document.createElement("span");
+        LabelNum.setAttribute("class","Counter");
+        LabelNum.innerHTML=labelsCount[label];
+        showLabels.appendChild(LabelNum);
+        taglabel.appendChild(showLabels);
+    }
+
+    
     let genTime=document.getElementsByClassName("genTime")[0];
     genTime.innerHTML="抓取时间："+formatTime(jsonData[0]["published"],needHMS=true);
-
+    
     let SideNav=document.getElementsByClassName("SideNav")[0];
     for(let i=1;i<jsonData.length;i++){
 
-        // <div class="lists chrome" style="display: block;">
-        //     <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="
+        // <div class="lists json.name" style="display: block;">
         let lists=document.createElement("div");
         lists.setAttribute("class","lists "+jsonData[i]['name']);
         lists.setAttribute("style","display: block;");
-        
+
+        // <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="json.link"
         let item=document.createElement("a");
         item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");
         item.setAttribute("href",jsonData[i]['link']);
@@ -239,6 +291,7 @@ function showList(jsonData){
         LabelName.setAttribute("style","background-color:"+jsonData[0]["rssBase"][jsonData[i]['name']]['nameColor']);
         LabelName.innerHTML=jsonData[i]['name'];
         listLabels.appendChild(LabelName);
+        
         let LabelTime=document.createElement("span");
         LabelTime.setAttribute("class","Label LabelTime");
         LabelTime.setAttribute("style","background-color:#0969da");
@@ -247,131 +300,8 @@ function showList(jsonData){
 
         item.appendChild(center);
         item.appendChild(listLabels);
-
         lists.appendChild(item);
         SideNav.appendChild(lists);
-
-    }
-}
-
-console.log("\n %c Gmerss %c Meekdai/Gmerss \n\n", "color: #fff; background-image: linear-gradient(90deg, rgb(47, 172, 178) 0%, rgb(45, 190, 96) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(45, 190, 96) 0%, rgb(255, 255, 255) 100%); padding:5px 0;");
-</script>
-
-<script>
-document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("music").setAttribute("d",value=IconList["music"]);
-document.getElementById("About Me").setAttribute("d",value=IconList["about"]);
-document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
-
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
-}
-</script>
-
-<script>
-document.getElementById("pathHome").setAttribute("d",IconList["home"]);
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-
-tagList=[];
-labelsCount={};
-jsonData='';
-let requestJson="postList.json"
-let request=new XMLHttpRequest();
-request.open("GET",requestJson);
-request.responseType='text';
-request.send();
-request.onload=function(){
-    jsonData=JSON.parse(request.response);
-    console.log(jsonData);
-    showList(labelsCount);
-    setClassDisplay(decodeURI(window.location.hash.slice(1)));
-}
-
-function showList(labelsCount){
-    let SideNav=document.getElementsByClassName("SideNav")[0];
-    SideNav.classList.add("border");
-    let taglabel=document.getElementById("taglabel");
-
-    jsonData['labelColorDict']["All"]="#000";
-    labelsCount["All"]=0;
-    for (let key in jsonData) {
-        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['labels'])) {
-            labelsCount["All"]++;
-            for (let label of jsonData[key]['labels']) {
-                labelsCount[label] = (labelsCount[label] || 0) + 1;
-            }
-        }
-    }
-
-    let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
-    for (let label of sortedLabelsList) {
-        tagList.push(label);
-        let showLabels = document.createElement("button");
-        showLabels.setAttribute("class", "Label");
-        showLabels.setAttribute("style", "background-color:" + jsonData['labelColorDict'][label]+";padding:4px;");
-        showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
-        showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
-
-        let LabelNum=document.createElement("span");
-        LabelNum.setAttribute("class","Counter");
-        LabelNum.innerHTML=labelsCount[label];
-        showLabels.appendChild(LabelNum);
-        taglabel.appendChild(showLabels);
-    }
-
-    for(i in jsonData){
-        if(i!='labelColorDict'){
-            let div=document.createElement("div");
-            div.setAttribute("class","lists "+jsonData[i]['labels'].join(" "));
-            let item=document.createElement("a");
-            item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");
-            item.setAttribute("href",jsonData[i]['postUrl']);
-
-            let center=document.createElement("div");
-            center.setAttribute("class","d-flex flex-items-center");
-
-            svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-            path=document.createElementNS("http://www.w3.org/2000/svg","path"); 
-            span=document.createElement("span");
-            svg.setAttributeNS(null,"class","SideNav-icon octicon");
-            svg.setAttributeNS(null,"style","width:16px;height:16px");
-            path.setAttributeNS(null, "d", IconList["post"]);
-            svg.appendChild(path);
-
-            let title=document.createElement("span");
-            title.setAttribute("class","listTitle");
-            title.innerHTML=jsonData[i]['postTitle'];
-            center.appendChild(svg);
-            center.appendChild(title);
-
-            let listLabels=document.createElement("div");
-            listLabels.setAttribute("class","listLabels");
-            
-            for(label of jsonData[i]['labels']){
-                let LabelName=document.createElement("span");
-                LabelName.setAttribute("class","Label LabelName");
-                LabelName.setAttribute("style","background-color:"+jsonData['labelColorDict'][label]);
-                LabelName.innerHTML=label;
-                listLabels.appendChild(LabelName);
-            }
-            let LabelTime=document.createElement("span");
-            LabelTime.setAttribute("class","Label LabelTime");
-            LabelTime.setAttribute("style","background-color:"+jsonData[i]['dateLabelColor']);
-            LabelTime.innerHTML=jsonData[i]['createdDate'];
-            listLabels.appendChild(LabelTime);
-
-            item.appendChild(center);
-            item.appendChild(listLabels);
-            div.appendChild(item);
-            SideNav.appendChild(div);
-        }
     }
 }
 
@@ -429,7 +359,9 @@ function searchShow(){
     }
     else{document.getElementsByClassName("notFind")[0].style.display='none';}
 }
+    
 
+console.log("\n %c Gmerss %c Meekdai/Gmerss \n\n", "color: #fff; background-image: linear-gradient(90deg, rgb(47, 172, 178) 0%, rgb(45, 190, 96) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(45, 190, 96) 0%, rgb(255, 255, 255) 100%); padding:5px 0;");
 </script>
 
         

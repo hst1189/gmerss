@@ -130,8 +130,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
     </div>
     <div id="content">
-        <div style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></div>
         <div id="taglabel" style="margin-bottom:8px;"></div>
+        <div style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></div>
         <nav class="SideNav border"></nav>
         <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
     </div>
@@ -223,19 +223,19 @@ function showList(jsonData){
     let taglabel=document.getElementById("taglabel");
     //jsonData['labelColorDict']["All"]="#000";
     
-    //labelsCount["All"]=0;
-    //for (let key in jsonData) {
-    //    if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['name'])) {
-    //        labelsCount["All"]++;
-    //        for (let label of jsonData[key]['name']) {
-    //            labelsCount[label] = (labelsCount[label] || 0) + 1;
-    //        }
-    //    }
-    //}
+    labelsCount["All"]=0;
+    for (let key in jsonData) {
+        alter(key)
+        if (key !== 'labelColorDict' && Array.isArray(jsonData[key])) {
+            labelsCount["All"]++;
+            for (let label of jsonData[key]['name']) {
+                labelsCount[label] = (labelsCount[label] || 0) + 1;
+            }
+        }
+    }
 
     //let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
 
-    alert("showList");
     for (let i=1;i<jsonData.length;i++) {
         //tagList.push(jsonData[i]['name']);
         

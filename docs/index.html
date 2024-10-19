@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="//cdn.staticfile.org/Primer/21.0.7/primer.css" rel="stylesheet" />
     <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg">
-    <title>小饅頭の部屋</title>
+    <meta name="description" content="Gmerss - 小饅頭の部屋">
+    <title>Gmerss - 小饅頭の部屋</title>
     <script>
         if(localStorage.getItem("meek_theme")==null){}
         else if(localStorage.getItem("meek_theme")=="dark"){document.getElementsByTagName("html")[0].attributes.getNamedItem("data-color-mode").value="dark";}
@@ -91,6 +92,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <body>
     <div id="header">
         <h1><img src="https://github.githubassets.com/favicons/favicon.svg" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">小饅頭の部屋</a></h1>
+
+        <!--
         <div class="title-right">
             <a class="btn btn-invisible circle" href="https://www.grapehut.us.kg" id="buttonHome" title="首页">
                 <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
@@ -105,6 +108,24 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
                 <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
             </a>
         </div>
+        -->
+
+        <div class="title-right">
+            <div class="subnav-search">
+                <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
+                <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索</button>
+                <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                    <path id="searchSVG" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <a class="btn btn-invisible circle" href="https://www.grapehut.us.kg" id="buttonHome"  title="首页">
+                <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
+            </a>
+            <a class="btn btn-invisible circle" onclick="modeSwitch()" style="display:none;" title="切换主题">
+                <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+            </a>
+        </div>
+
     </div>
     <div id="content">
         <div style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></div>
@@ -243,6 +264,164 @@ for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
 }
 </script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
+
+tagList=[];
+labelsCount={};
+jsonData='';
+let requestJson="postList.json"
+let request=new XMLHttpRequest();
+request.open("GET",requestJson);
+request.responseType='text';
+request.send();
+request.onload=function(){
+    jsonData=JSON.parse(request.response);
+    console.log(jsonData);
+    showList(labelsCount);
+    setClassDisplay(decodeURI(window.location.hash.slice(1)));
+}
+
+function showList(labelsCount){
+    let SideNav=document.getElementsByClassName("SideNav")[0];
+    SideNav.classList.add("border");
+    let taglabel=document.getElementById("taglabel");
+
+    jsonData['labelColorDict']["All"]="#000";
+    labelsCount["All"]=0;
+    for (let key in jsonData) {
+        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['labels'])) {
+            labelsCount["All"]++;
+            for (let label of jsonData[key]['labels']) {
+                labelsCount[label] = (labelsCount[label] || 0) + 1;
+            }
+        }
+    }
+
+    let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
+    for (let label of sortedLabelsList) {
+        tagList.push(label);
+        let showLabels = document.createElement("button");
+        showLabels.setAttribute("class", "Label");
+        showLabels.setAttribute("style", "background-color:" + jsonData['labelColorDict'][label]+";padding:4px;");
+        showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
+        showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
+
+        let LabelNum=document.createElement("span");
+        LabelNum.setAttribute("class","Counter");
+        LabelNum.innerHTML=labelsCount[label];
+        showLabels.appendChild(LabelNum);
+        taglabel.appendChild(showLabels);
+    }
+
+    for(i in jsonData){
+        if(i!='labelColorDict'){
+            let div=document.createElement("div");
+            div.setAttribute("class","lists "+jsonData[i]['labels'].join(" "));
+            let item=document.createElement("a");
+            item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");
+            item.setAttribute("href",jsonData[i]['postUrl']);
+
+            let center=document.createElement("div");
+            center.setAttribute("class","d-flex flex-items-center");
+
+            svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+            path=document.createElementNS("http://www.w3.org/2000/svg","path"); 
+            span=document.createElement("span");
+            svg.setAttributeNS(null,"class","SideNav-icon octicon");
+            svg.setAttributeNS(null,"style","width:16px;height:16px");
+            path.setAttributeNS(null, "d", IconList["post"]);
+            svg.appendChild(path);
+
+            let title=document.createElement("span");
+            title.setAttribute("class","listTitle");
+            title.innerHTML=jsonData[i]['postTitle'];
+            center.appendChild(svg);
+            center.appendChild(title);
+
+            let listLabels=document.createElement("div");
+            listLabels.setAttribute("class","listLabels");
+            
+            for(label of jsonData[i]['labels']){
+                let LabelName=document.createElement("span");
+                LabelName.setAttribute("class","Label LabelName");
+                LabelName.setAttribute("style","background-color:"+jsonData['labelColorDict'][label]);
+                LabelName.innerHTML=label;
+                listLabels.appendChild(LabelName);
+            }
+            let LabelTime=document.createElement("span");
+            LabelTime.setAttribute("class","Label LabelTime");
+            LabelTime.setAttribute("style","background-color:"+jsonData[i]['dateLabelColor']);
+            LabelTime.innerHTML=jsonData[i]['createdDate'];
+            listLabels.appendChild(LabelTime);
+
+            item.appendChild(center);
+            item.appendChild(listLabels);
+            div.appendChild(item);
+            SideNav.appendChild(div);
+        }
+    }
+}
+
+function updateShowTag(label){
+    if(window.location.hash.slice(1)!=encodeURI(label)){
+        window.location.hash="#"+(label);
+        setClassDisplay(label);
+    }
+}
+
+function setClassDisplay(label){
+    let lists = document.getElementsByClassName("lists");
+    let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    tagTitle.innerHTML="Tag #"+label;
+    document.title=label+" - 小饅頭の部屋";
+    document.getElementsByClassName("subnav-search-input")[0].value='';
+    if(label=="All"){
+        for(let i = 0; i < lists.length; i++){lists[i].style.display='block';}
+        document.getElementsByClassName("notFind")[0].style.display='none';
+    }
+    else if(tagList.indexOf(label)!=-1){
+        for(let i = 0; i < lists.length; i++){
+            lists[i].style.display='none';
+        }
+
+        let labels = document.getElementsByClassName(label);
+        for(let i = 0; i < labels.length; i++){
+            labels[i].style.display='block';
+        }
+        document.getElementsByClassName("notFind")[0].style.display='none';
+    }
+    else{
+        document.getElementsByClassName("subnav-search-input")[0].value=label;
+        searchShow();
+    }
+}
+
+function searchShow(){
+    let lists = document.getElementsByClassName("lists");
+    let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    let searchInput = document.getElementsByClassName("subnav-search-input")[0].value;
+    tagTitle.innerHTML="Search #"+searchInput;
+    if(searchInput==''){document.title="Search - 小饅頭の部屋";}
+    else{document.title=searchInput+" - 小饅頭の部屋";}
+    let a=0;
+    window.location.hash="#"+(searchInput);
+    for(let i = 0; i < lists.length; i++){
+        if(lists[i].childNodes[0].childNodes[0].childNodes[1].innerHTML.toUpperCase().indexOf(searchInput.toUpperCase())==-1){lists[i].style.display='none';}
+        else{lists[i].style.display='block';a=a+1;}
+    }
+    if(a==0){
+        let notFind=document.getElementsByClassName("notFind")[0];
+        notFind.style.display='block';
+        notFind.innerHTML='Not Find "'+searchInput+'"';
+    }
+    else{document.getElementsByClassName("notFind")[0].style.display='none';}
+}
+
+</script>
+
         
 <script async src='https://www.grapehut.us.kg/assets/RonanTheme.js'></script>
 <script async src='https://www.grapehut.us.kg/assets/GmeekVercount.js'></script>

@@ -174,8 +174,6 @@ function modeSwitch(){
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("music").setAttribute("d",value=IconList["music"]);
-document.getElementById("About Me").setAttribute("d",value=IconList["about"]);
 document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
 
 iconTOP=document.getElementsByClassName("svgTop1");
@@ -186,6 +184,21 @@ for(var i=0;i<iconTOP.length;i++){
 }
 for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
+}
+
+
+function formatTime(time,needHMS=false){
+    let date=new Date(time*1000);
+    let Y = date.getFullYear() + '-';
+    let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    let D = (date.getDate() < 10 ? '0'+(date.getDate()) : date.getDate()) + ' ';
+    if(needHMS){
+        let h = (date.getHours() < 10 ? '0'+(date.getHours()) : date.getHours()) + ':';
+        let m = (date.getMinutes() < 10 ? '0'+(date.getMinutes()) : date.getMinutes()) + ':';
+        let s = (date.getSeconds() < 10 ? '0'+(date.getSeconds()) : date.getSeconds());
+        return Y+M+D+h+m+s;
+    }
+    else{return Y+M+D}
 }
 
 
@@ -204,22 +217,11 @@ request.onload=function(){
     showList(jsonData);
 }
 
-function formatTime(time,needHMS=false){
-    let date=new Date(time*1000);
-    let Y = date.getFullYear() + '-';
-    let M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-    let D = (date.getDate() < 10 ? '0'+(date.getDate()) : date.getDate()) + ' ';
-    if(needHMS){
-        let h = (date.getHours() < 10 ? '0'+(date.getHours()) : date.getHours()) + ':';
-        let m = (date.getMinutes() < 10 ? '0'+(date.getMinutes()) : date.getMinutes()) + ':';
-        let s = (date.getSeconds() < 10 ? '0'+(date.getSeconds()) : date.getSeconds());
-        return Y+M+D+h+m+s;
-    }
-    else{return Y+M+D}
-}
 
 
 function showList(jsonData){
+    alert("showList");
+
     // <div id="taglabel" style="margin-bottom:8px;"></div>
     let taglabel=document.getElementById("taglabel");
     jsonData['labelColorDict']["All"]="#000";
@@ -359,9 +361,7 @@ function searchShow(){
     }
     else{document.getElementsByClassName("notFind")[0].style.display='none';}
 }
-    
 
-console.log("\n %c Gmerss %c Meekdai/Gmerss \n\n", "color: #fff; background-image: linear-gradient(90deg, rgb(47, 172, 178) 0%, rgb(45, 190, 96) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(45, 190, 96) 0%, rgb(255, 255, 255) 100%); padding:5px 0;");
 </script>
 
         

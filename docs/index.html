@@ -224,12 +224,13 @@ function showList(jsonData){
 
     // <div id="taglabel" style="margin-bottom:8px;"></div>
     let taglabel=document.getElementById("taglabel");
-    jsonData['labelColorDict']["All"]="#000";
+    //jsonData['labelColorDict']["All"]="#000";
+    
     labelsCount["All"]=0;
     for (let key in jsonData) {
-        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['labels'])) {
+        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['name'])) {
             labelsCount["All"]++;
-            for (let label of jsonData[key]['labels']) {
+            for (let label of jsonData[key]['name']) {
                 labelsCount[label] = (labelsCount[label] || 0) + 1;
             }
         }
@@ -240,7 +241,7 @@ function showList(jsonData){
         tagList.push(label);
         let showLabels = document.createElement("button");
         showLabels.setAttribute("class", "Label");
-        showLabels.setAttribute("style", "background-color:" + jsonData['labelColorDict'][label]+";padding:4px;");
+        showLabels.setAttribute("style", "background-color:" + jsonData[label]['nameColor']+";padding:4px;");
         showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
         showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
 

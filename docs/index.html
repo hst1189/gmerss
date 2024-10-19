@@ -235,15 +235,11 @@ function showList(jsonData){
     //let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
     for (let label in labelsCount) {
         tagList.push(label);
+        if(label=="All"){labelColor="#000";}
+        else{labelColor= jsonData[0]["rssBase"][label]['nameColor'];}
         
         let showLabels = document.createElement("button");
         showLabels.setAttribute("class", "Label");
-        for (let i=1;i<jsonData[0]["rssBase"][jsonData].length;i++){
-            if(label== jsonData[0]["rssBase"][jsonData[i]['name']]){
-                labelColor= jsonData[0]["rssBase"][jsonData[i]['name']]['nameColor']; 
-                break;
-            }
-        }
         showLabels.setAttribute("style", "background-color:" + labelColor +";padding:4px;");
         showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
         showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");

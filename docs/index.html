@@ -225,7 +225,7 @@ function showList(jsonData){
     
     labelsCount["All"]=0;
     for (let key in jsonData) {
-        alter(key)
+        alert(key)
         if (key !== 'labelColorDict' && Array.isArray(jsonData[key])) {
             labelsCount["All"]++;
             for (let label of jsonData[key]['name']) {

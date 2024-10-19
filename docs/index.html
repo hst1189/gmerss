@@ -213,7 +213,6 @@ request.send();
 request.onload=function(){
     jsonData=JSON.parse(request.response);
     console.log(jsonData);
-    alert("showList");
     showList(jsonData);
 }
 
@@ -235,18 +234,21 @@ function showList(jsonData){
     //}
 
     //let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
+
+    alert("showList");
     for (let i=1;i<jsonData.length;i++) {
-        tagList.push(jsonData[i]['name']);
+        //tagList.push(jsonData[i]['name']);
         
         let showLabels = document.createElement("button");
         showLabels.setAttribute("class", "Label");
         //showLabels.setAttribute("style", "background-color:" + jsonData[i]['nameColor']+";padding:4px;");
-        showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
-        showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
+        //showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
+        //showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
 
         let LabelNum=document.createElement("span");
         LabelNum.setAttribute("class","Counter");
-        LabelNum.innerHTML=labelsCount[label];
+        //LabelNum.innerHTML=labelsCount[label];
+        
         showLabels.appendChild(LabelNum);
         taglabel.appendChild(showLabels);
     }

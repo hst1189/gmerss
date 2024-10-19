@@ -207,8 +207,8 @@ function showList(jsonData){
         // <div class="lists chrome" style="display: block;">
         //     <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="
         let lists=document.createElement("div");
-        item.setAttribute("class","lists "+jsonData[i]['name'].join(" "));
-        item.setAttribute("style","display: block;");
+        lists.setAttribute("class","lists "+jsonData[i]['name'].join(" "));
+        lists.setAttribute("style","display: block;");
         
         let item=document.createElement("a");
         item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");

@@ -228,26 +228,25 @@ function showList(jsonData){
         alert(key)
         if (key != 0) {
             labelsCount["All"]++;
-            for (let label of jsonData[key]['name']) {
-                labelsCount[label] = (labelsCount[label] || 0) + 1;
-            }
+            let label = jsonData[key]['name']
+            labelsCount[label] = (labelsCount[label] || 0) + 1;
         }
     }
 
     //let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
 
-    for (let i=1;i<jsonData.length;i++) {
-        //tagList.push(jsonData[i]['name']);
+    for (let label in labelsCount) {
+        tagList.push(label);
         
         let showLabels = document.createElement("button");
         showLabels.setAttribute("class", "Label");
-        //showLabels.setAttribute("style", "background-color:" + jsonData[i]['nameColor']+";padding:4px;");
-        //showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
-        //showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
+        showLabels.setAttribute("style", "background-color:" + label +";padding:4px;");
+        showLabels.innerHTML="&nbsp;&nbsp;"+label+" ";
+        showLabels.setAttribute("onclick", "javascript:updateShowTag('" + label + "');");
 
         let LabelNum=document.createElement("span");
         LabelNum.setAttribute("class","Counter");
-        //LabelNum.innerHTML=labelsCount[label];
+        LabelNum.innerHTML=labelsCount[label];
         
         showLabels.appendChild(LabelNum);
         taglabel.appendChild(showLabels);

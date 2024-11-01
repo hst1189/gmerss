@@ -10,13 +10,25 @@ docs
 ```
 
 ## 设置
+```
 - displayDay=100   # 抓取多久前的内容  #最近100天（约3个月）
-
 - displayMax=300   # 每个RSS最多抓取数 #300个（概算一天3个）
-
 - weeklyKeyWord="" # 周刊过滤关键字
-
-- rssBase={}       # 抓取内容
+- rssBase={        # 抓取内容
+    "HelloGitHub月刊":{
+        "url":"https://hellogithub.com/rss",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "nameColor":"#d00150"
+    },
+    "xxxx月刊":{
+        "url":"https://xxx.com/rss",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "nameColor":"#fff"
+    }
+ }       
+```
 
 ---
 RSS-Reader All in Github | Powered by ❤️ [Meekdai/Gmerss](https://github.com/Meekdai/Gmerss)

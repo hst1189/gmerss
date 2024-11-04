@@ -31,6 +31,13 @@ rssBase={
         "nameColor":"#a4244b"
     },
     
+    "不上班研究所":{
+        "url":"https://www.toocool.cc/feed",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#a4fffb"
+    },
+    
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",

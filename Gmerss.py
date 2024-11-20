@@ -23,6 +23,14 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#df7150"
     },
+
+    
+    "Portable Apps":{
+        "url":"https://feeds.feedburner.com/portableapps_com",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#df7150"
+    },
     
     "独立开发变现":{
         "url":"https://www.ezindie.com/feed/rss.xml",

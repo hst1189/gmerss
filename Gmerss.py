@@ -29,7 +29,7 @@ rssBase={
         "url":"https://feeds.feedburner.com/portableapps_com",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#df7150"
+        "nameColor":"#ff7950"
     },
     
     "独立开发变现":{

@@ -66,13 +66,7 @@ rssBase={
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
         "nameColor":"#1f883d"
     },
-    
-    "1Link":{
-        "url":"https://1link.fun/index.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#7479dc"
-    },
+
     
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",
@@ -80,13 +74,7 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
     },
-    
-    "Meekdai":{
-        "url":"https://blog.meekdai.com/rss.xml",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#df3450"
-    },
+
     
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.cc/feed/",

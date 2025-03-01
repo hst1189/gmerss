@@ -43,7 +43,7 @@ rssBase={
         "url":"https://www.toocool.cc/feed",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#a4fffb"
+        "nameColor":"#a4ff00"
     },
     
     "二丫讲梵":{

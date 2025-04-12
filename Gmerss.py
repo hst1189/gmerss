@@ -10,12 +10,6 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    "HelloGitHub月刊":{
-        "url":"https://hellogithub.com/rss",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
-        "nameColor":"#d00150"
-    },
     
     "小众软件":{
         "url":"https://feeds.appinn.com/appinns/",
@@ -23,13 +17,19 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#df7150"
     },
-
     
     "Portable Apps":{
         "url":"https://feeds.feedburner.com/portableapps_com",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#ff7950"
+    },
+    
+    "潮流周刊":{
+        "url":"https://weekly.tw93.fun/rss.xml",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#bc4c00"
     },
     
     "独立开发变现":{
@@ -74,7 +74,14 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
     },
-
+    
+    "HelloGitHub月刊":{
+        "url":"https://hellogithub.com/rss",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "nameColor":"#d00150"
+    },
+    
     
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.cc/feed/",

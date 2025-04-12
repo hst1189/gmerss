@@ -128,6 +128,7 @@ for rss in rssBase:
                 onePost["name"]=rss
                 onePost["title"]=entry['title']
                 onePost["link"]=entry['link']
+                onePost["description"]=entry['description']
                 onePost["published"]=published
                 rssAll.append(onePost)
                 print("====== Reptile %s ======"%(onePost["title"]))

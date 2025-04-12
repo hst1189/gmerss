@@ -31,6 +31,13 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
     },
+
+    "老胡的周刊":{
+        "url":"https://weekly.howie6879.com/rss/rss.xml",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
+        "nameColor":"#A333D0"
+    },
     
     "独立开发变现":{
         "url":"https://www.ezindie.com/feed/rss.xml",
@@ -53,12 +60,6 @@ rssBase={
         "nameColor":"#93bd76"
     },
     
-    "老胡的周刊":{
-        "url":"https://weekly.howie6879.com/rss/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
-        "nameColor":"#A333D0"
-    },
     
     "阮一峰":{
         "url":"http://www.ruanyifeng.com/blog/atom.xml",

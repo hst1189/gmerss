@@ -278,11 +278,11 @@ function showList(jsonData){
 
         // <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="json.link"
         let item=document.createElement("a");
-        item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between popup-trigger");
-        item.setAttribute("href","#");
-        item.setAttribute("onclick","javascript:window.open('" & jsonData[i]['link']& "', 'MySmart', 'top=255,left=280,toolbar=no,status=no,location=no,resizable=no,menubar=no,scrollbars=no,resizable=no,width=320,height=300')");
+        item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");
+        item.setAttribute("href","javascript:void(0);");
+        item.setAttribute("onclick","window.open('" & jsonData[i]['link'] & "');");
         item.setAttribute("title",jsonData[i]['description']);
-        item.setAttribute("target","_blank");
+        //item.setAttribute("target","_blank");
 
         let center=document.createElement("div");
         center.setAttribute("class","d-flex flex-items-center");

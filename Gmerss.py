@@ -132,14 +132,15 @@ for rss in rssBase:
                 onePost["published"]=published
                 rssAll.append(onePost)
                 print("====== Reptile %s ======"%(onePost["title"]))
+                print("====== Reptile %s ======"%(onePost["description"]))
                 i=i+1
         else:
             published = None
             print("Warning: 'published' key not found in entry")
 
             
-# print("====== Start sorted %d list ======"%(len(rssAll)-1))
-# rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
+print("====== Start sorted %d list ======"%(len(rssAll)-1))
+rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
 
 if not os.path.exists('docs/'):
     os.mkdir('docs/')

@@ -107,24 +107,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             height: 500px;
     }
 </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var trigger = document.querySelector('.popup-trigger');
-        var popup = document.querySelector('.popup');
-
-        trigger.addEventListener('mousemove', function (event) {
-            popup.style.display = 'block';
-            // 设置弹出窗口的位置
-            popup.style.left = event.clientX + 'px';
-            popup.style.top = event.clientY + 'px';
-        });
-
-        trigger.addEventListener('mouseout', function () {
-            popup.style.display = 'none';
-        });
-    });
-</script>
     
 <body>
     <div id="header">
@@ -228,7 +210,25 @@ for(var i=0;i<iconPost.length;i++){
     iconPost[i].setAttribute("d",IconList["post"]);
 }
 </script>
-    
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var trigger = document.querySelector('.popup-trigger');
+        var popup = document.querySelector('.popup');
+
+        trigger.addEventListener('mousemove', function (event) {
+            popup.style.display = 'block';
+            // 设置弹出窗口的位置
+            popup.style.left = event.clientX + 'px';
+            popup.style.top = event.clientY + 'px';
+        });
+
+        trigger.addEventListener('mouseout', function () {
+            popup.style.display = 'none';
+        });
+    });
+</script>    
+
 <script>
 function formatTime(time,needHMS=false){
     let date=new Date(time*1000);
@@ -309,8 +309,9 @@ function showList(jsonData){
 
         // <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="json.link"
         let item=document.createElement("a");
-        item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between");
+        item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between popup-trigger");
         item.setAttribute("href",jsonData[i]['link']);
+        item.setAttribute("description",jsonData[i]['description']);
         item.setAttribute("target","_blank");
 
         let center=document.createElement("div");

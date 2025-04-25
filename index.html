@@ -95,16 +95,6 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         .SideNav-item {
             transition: 0.1s;
         }
-        
-        /* 设置小窗口格式 */
-        .popup {
-            display: none;
-            /* 样式设置 */
-            position: absolute;
-            padding: 0px;
-            width: 500px;
-            height: 500px;
-    }
 </style>
     
 <body>
@@ -209,23 +199,6 @@ for(var i=0;i<iconPost.length;i++){
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var trigger = document.getElementsByClassName('.popup-trigger');
-        var popup = document.getElementsByClassName('.popup');
-
-        trigger.addEventListener('mousemove', function (event) {
-            popup.style.display = 'block';
-            // 设置弹出窗口的位置
-            popup.style.left = event.clientX + 'px';
-            popup.style.top = event.clientY + 'px';
-        });
-
-        trigger.addEventListener('mouseout', function () {
-            popup.style.display = 'none';
-        });
-    });
-
-    
 function formatTime(time,needHMS=false){
     let date=new Date(time*1000);
     let Y = date.getFullYear() + '-';
@@ -306,7 +279,8 @@ function showList(jsonData){
         // <a class="SideNav-item d-flex flex-items-center flex-justify-between" href="json.link"
         let item=document.createElement("a");
         item.setAttribute("class","SideNav-item d-flex flex-items-center flex-justify-between popup-trigger");
-        item.setAttribute("href",jsonData[i]['link']);
+        item.setAttribute("href","#");
+        item.setAttribute("onclick","javascript:window.open('" & jsonData[i]['link']& "', 'MySmart', 'top=255,left=280,toolbar=no,status=no,location=no,resizable=no,menubar=no,scrollbars=no,resizable=no,width=320,height=300')");
         item.setAttribute("title",jsonData[i]['description']);
         item.setAttribute("target","_blank");
 

@@ -13,35 +13,35 @@ rssBase={
     "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
         "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0900",
+        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
         "nameColor":"#ff3150"
     },
 
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.xyz/feed/",
         "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#563150"
     },
 
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#d00150"
     },
 
     "小众软件":{
         "url":"https://feeds.appinn.com/appinns/",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#df7150"
     },
     
     "Portable Apps":{
         "url":"https://feeds.feedburner.com/portableapps_com",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#ff7950"
     },
     
@@ -69,14 +69,14 @@ rssBase={
     "不上班研究所":{
         "url":"https://www.toocool.cc/feed",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#a4ff00"
     },
     
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#93bd76"
     },
     

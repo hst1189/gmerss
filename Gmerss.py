@@ -51,6 +51,13 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#a13344"
     },
+    
+    "阮一峰":{
+        "url":"http://www.ruanyifeng.com/blog/atom.xml",
+        "type":"weekly",
+        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
+        "nameColor":"#a1bbcc"
+    },
      
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
@@ -80,13 +87,6 @@ rssBase={
         "nameColor":"#00ff00"
     },
     
-    
-    "阮一峰":{
-        "url":"http://www.ruanyifeng.com/blog/atom.xml",
-        "type":"weekly",
-        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
-        "nameColor":"#a1bbcc"
-    },
 
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",

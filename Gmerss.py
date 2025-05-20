@@ -10,7 +10,20 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    
+    "老王写真乐园关注":{
+        "url":"https://www.laowangidol.xyz/feed/",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
+        "nameColor":"#563150"
+    }，
+
+    "HelloGitHub月刊":{
+        "url":"https://hellogithub.com/rss",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
+        "nameColor":"#d00150"
+    },
+
     "小众软件":{
         "url":"https://feeds.appinn.com/appinns/",
         "type":"weekly",
@@ -68,28 +81,16 @@ rssBase={
         "nameColor":"#1f883d"
     },
 
-    
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
-    },
-    
-    "HelloGitHub月刊":{
-        "url":"https://hellogithub.com/rss",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
-        "nameColor":"#d00150"
-    },
-    
-    
-    "老王写真乐园关注":{
-        "url":"https://www.laowangidol.cc/feed/",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
-        "nameColor":"#563150"
     }
+    
+    
+    
+
 }
 ######################################################################################
 
@@ -140,7 +141,7 @@ for rss in rssBase:
 
             
 print("====== Start sorted %d list ======"%(len(rssAll)-1))
-rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
+#rssAll=sorted(rssAll,key=lambda e:e.__getitem__("published"),reverse=True)
 
 if not os.path.exists('docs/'):
     os.mkdir('docs/')

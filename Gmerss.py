@@ -13,7 +13,7 @@ rssBase={
     "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
         "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S +0900",
         "nameColor":"#ff3150"
     },
 

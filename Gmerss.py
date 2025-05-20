@@ -10,18 +10,25 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
+    "少数派":{
+        "url":"https://sspai.com/feed",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#001122"
+    },
+
     "36kr":{
         "url":"https://36kr.com/feed",
         "type":"post",
         "timeFormat":"%Y-%m-%d %H:%M:%S %z",
-        "nameColor":"#001122"
+        "nameColor":"#223344"
     },
     
     "ruyo.net":{
         "url":"https://51.ruyo.net/feed",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#003344"
+        "nameColor":"#231222"
     },
     
         

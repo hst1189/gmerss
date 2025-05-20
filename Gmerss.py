@@ -10,6 +10,13 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
+    "36kr":{
+        "url":"https://36kr.com/feed",
+        "type":"post",
+        "timeFormat":"%Y-%m-%d %H:%M:%S %z",
+        "nameColor":"#78ffff"
+    },
+        
     "Publickey":{
         "url":"https://www.publickey1.jp/atom.xml",
         "type":"post",

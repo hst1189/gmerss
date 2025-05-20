@@ -24,34 +24,20 @@ rssBase={
         "nameColor":"#a17788"
     },
     
-    "不死鸟 - 分享为王官网":{
+    "不死鸟 - 分享为王":{
         "url":"https://iui.su/feed",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#231222"
     },
     
-    "HelloGitHub月刊":{
-        "url":"https://hellogithub.com/rss",
+    "猫鱼周刊":{
+        "url":"https://ameow.xyz/feed/categories/weekly.xml",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#00bbcc"
     },
 
-    "小众软件":{
-        "url":"https://feeds.appinn.com/appinns/",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#00ddee"
-    },
-    
-    "Portable Apps":{
-        "url":"https://feeds.feedburner.com/portableapps_com",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#00ff00"
-    },
-    
     "潮流周刊":{
         "url":"https://weekly.tw93.fun/rss.xml",
         "type":"weekly",
@@ -62,17 +48,36 @@ rssBase={
     "老胡的周刊":{
         "url":"https://weekly.howie6879.com/rss/rss.xml",
         "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S +0806",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#a13344"
     },
-    
-
+     
+    "HelloGitHub月刊":{
+        "url":"https://hellogithub.com/rss",
+        "type":"monthly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#00bbcc"
+    },
     
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#a199aa"
+    },
+
+    "小众软件":{
+        "url":"https://feeds.appinn.com/appinns/",
+        "type":"daily",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#00ddee"
+    },
+    
+    "Portable Apps":{
+        "url":"https://feeds.feedburner.com/portableapps_com",
+        "type":"daily",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#00ff00"
     },
     
     

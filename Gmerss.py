@@ -10,49 +10,13 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    "少数派":{
-        "url":"https://sspai.com/feed",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#001122"
-    },
-
-    "36kr":{
-        "url":"https://36kr.com/feed",
-        "type":"post",
-        "timeFormat":"%Y-%m-%d %H:%M:%S %z",
-        "nameColor":"#223344"
-    },
-    
-    "ruyo.net":{
-        "url":"https://51.ruyo.net/feed",
+    "不死鸟 - 分享为王官网":{
+        "url":"https://iui.su/feed",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#231222"
     },
     
-        
-    "Publickey":{
-        "url":"https://www.publickey1.jp/atom.xml",
-        "type":"post",
-        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
-        "nameColor":"#005566"
-    },
-    
-    "Qiita_kjm_nuco":{
-        "url":"https://qiita.com/kjm_nuco/feed.atom",
-        "type":"post",
-        "timeFormat":"%Y-%m-%dT%H:%M:%S%z",
-        "nameColor":"#007788"
-    },
-
-    "老王写真乐园关注":{
-        "url":"https://www.laowangidol.xyz/feed/",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#009900"
-    },
-
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
         "type":"weekly",
@@ -122,7 +86,29 @@ rssBase={
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#a1ddee"
+    },
+    
+    "Publickey":{
+        "url":"https://www.publickey1.jp/atom.xml",
+        "type":"post",
+        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
+        "nameColor":"#005566"
+    },
+    
+    "Qiita_kjm_nuco":{
+        "url":"https://qiita.com/kjm_nuco/feed.atom",
+        "type":"post",
+        "timeFormat":"%Y-%m-%dT%H:%M:%S%z",
+        "nameColor":"#007788"
+    },
+    
+    "老王写真乐园关注":{
+        "url":"https://www.laowangidol.xyz/feed/",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#009900"
     }
+
     
 }
 ######################################################################################

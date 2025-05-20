@@ -30,7 +30,14 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#231222"
     },
-    
+
+    "独立开发者出海周刊":{
+        "url":"https://gap.weijunext.com/rss.xml",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#231222"
+    },
+ 
     "猫鱼周刊":{
         "url":"https://ameow.xyz/feed/categories/weekly.xml",
         "type":"weekly",

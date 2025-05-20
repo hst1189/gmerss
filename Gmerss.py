@@ -10,6 +10,13 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
+    "Publickey":{
+        "url":"https://www.publickey1.jp/atom.xml",
+        "type":"post",
+        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
+        "nameColor":"#ff31ff"
+    },
+    
     "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
         "type":"post",

@@ -27,7 +27,18 @@ docs
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0800",
         "nameColor":"#fff"
     }
- }       
+ }
+
+
+date_str_tz = 'Thu Feb 11 17:21:52 +0900 2021'
+format_str_tz = '%a %b %d %H:%M:%S %z %Y'
+
+date_str_tz = '2024-11-23 11 17:21:52 +0900'
+format_str_tz = '%Y-%b-%d %H:%M:%S %z '
+
+date_str_tz = 'Thu Feb 11 17:07:53 JST 2021'
+format_str_tz = '%a %b %d %H:%M:%S %Z %Y'
+ 
 ```
 
 ---

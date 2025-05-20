@@ -13,9 +13,17 @@ rssBase={
     "36kr":{
         "url":"https://36kr.com/feed",
         "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#78ffff"
+    },
+    
+    "ruyo.net":{
+        "url":"https://51.ruyo.net/feed",
+        "type":"post",
         "timeFormat":"%Y-%m-%d %H:%M:%S %z",
         "nameColor":"#78ffff"
     },
+    
         
     "Publickey":{
         "url":"https://www.publickey1.jp/atom.xml",

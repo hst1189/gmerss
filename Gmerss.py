@@ -10,19 +10,19 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    "Qiita:kjm_nuco":{
+    "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#ff3150"
-    }，
+    },
 
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.xyz/feed/",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S +0000",
         "nameColor":"#563150"
-    }，
+    },
 
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
@@ -94,6 +94,7 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#bc4c00"
     }
+    
 }
 ######################################################################################
 

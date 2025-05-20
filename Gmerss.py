@@ -10,6 +10,20 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
+    "独立开发变现":{
+        "url":"https://www.ezindie.com/feed/rss.xml",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#a15566"
+    },
+    
+    "不上班研究所":{
+        "url":"https://www.toocool.cc/feed",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#a17788"
+    },
+    
     "不死鸟 - 分享为王官网":{
         "url":"https://iui.su/feed",
         "type":"post",
@@ -52,19 +66,7 @@ rssBase={
         "nameColor":"#a13344"
     },
     
-    "独立开发变现":{
-        "url":"https://www.ezindie.com/feed/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#a15566"
-    },
-    
-    "不上班研究所":{
-        "url":"https://www.toocool.cc/feed",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#a17788"
-    },
+
     
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",

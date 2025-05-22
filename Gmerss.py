@@ -35,7 +35,7 @@ rssBase={
         "url":"https://weekly.tw93.fun/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#F0FFF0"
+        "nameColor":"#F0E68C"
     },
 
     "老胡的周刊":{

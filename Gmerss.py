@@ -5,8 +5,8 @@ import time
 import feedparser
 
 ######################################################################################
-displayDay=365 # 抓取多久前的内容  #最近365天（约1年）
-displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
+displayDay=10000 # 抓取多久前的内容  #最大
+displayMax=10000 # 每个RSS最多抓取数 #最大
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={

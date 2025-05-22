@@ -10,116 +10,116 @@ displayMax=3000 # 每个RSS最多抓取数 #3000个（一天10个概算）
 weeklyKeyWord="" # 周刊过滤关键字
 
 rssBase={
-    "独立开发变现":{
-        "url":"https://www.ezindie.com/feed/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#001122"
-    },
-    
-    "不上班研究所":{
-        "url":"https://www.toocool.cc/feed",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#334455"
-    },
-    
     "不死鸟 - 分享为王":{
         "url":"https://iui.su/feed",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#667788"
+        "nameColor":"#ff96b4"
     },
 
     "独立开发者出海周刊":{
         "url":"https://gap.weijunext.com/rss.xml",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#9900aa"
+        "nameColor":"#ff6347"
     },
  
     "猫鱼周刊":{
         "url":"https://ameow.xyz/feed/categories/weekly.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#00bbcc"
+        "nameColor":"#F5DEB3"
     },
 
     "潮流周刊":{
         "url":"https://weekly.tw93.fun/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#ddeeff"
+        "nameColor":"#F0FFF0"
     },
 
     "老胡的周刊":{
         "url":"https://weekly.howie6879.com/rss/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#112233"
+        "nameColor":"#DEB887"
     },
     
     "阮一峰":{
         "url":"http://www.ruanyifeng.com/blog/atom.xml",
         "type":"weekly",
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
-        "nameColor":"#445566"
+        "nameColor":"#B0E0E6"
     },
      
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
         "type":"monthly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#778899"
+        "nameColor":"#98FB98"
     },
     
     "二丫讲梵":{
         "url":"https://wiki.eryajf.net/learning-weekly.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#aabbcc"
+        "nameColor":"#87CEFA"
     },
 
     "小众软件":{
         "url":"https://feeds.appinn.com/appinns/",
         "type":"daily",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#00ddee"
+        "nameColor":"#7FFFD4"
     },
     
     "Portable Apps":{
         "url":"https://feeds.feedburner.com/portableapps_com",
         "type":"daily",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"223344"
+        "nameColor":"6495ED"
     },
-    
+
+    "不上班研究所":{
+        "url":"https://www.toocool.cc/feed",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#ff7f50"
+    },
+
+    "独立开发变现":{
+        "url":"https://www.ezindie.com/feed/rss.xml",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#ffefd5"
+    },
+        
     "豌豆花下猫":{
         "url":"https://pythoncat.top/rss.xml",
         "type":"weekly",
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#556677"
+        "nameColor":"#CCFF99"
     },
     
     "Publickey":{
         "url":"https://www.publickey1.jp/atom.xml",
         "type":"post",
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
-        "nameColor":"#8899aa"
+        "nameColor":"#00CCCC"
     },
     
     "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
         "type":"post",
         "timeFormat":"%Y-%m-%dT%H:%M:%S%z",
-        "nameColor":"#bbccdd"
+        "nameColor":"#660066"
     },
     
     "老王写真乐园关注":{
         "url":"https://www.laowangidol.xyz/feed/",
         "type":"post",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#eeff00"
+        "nameColor":"#ffd700"
     }
 
     

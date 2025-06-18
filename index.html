@@ -123,9 +123,7 @@ html {
             <div class="subnav-search">
                 <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
                 <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索</button>
-                <svg class="subnav-search-icon octicon octicon-search" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                    <path id="searchSVG" fill-rule="evenodd"></path>
-                </svg>
+                <svg class="octicon octicon-search" width="16" height="16"><path id="pathSearch" fill-rule="evenodd"></path></svg>
             </div>
             <a class="btn btn-invisible circle" href="https://blog.grapehut.xyz" id="buttonHome" title="首页">
                 <svg class="octicon" width="16" height="16"><path id="pathHome" fill-rule="evenodd"></path></svg>
@@ -166,7 +164,6 @@ let IconList={
 
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("searchSVG").setAttribute("d",IconList["search"]);
 
 if(localStorage.getItem("meek_theme")==null){localStorage.setItem("meek_theme","light");changeLight();}
 else if(localStorage.getItem("meek_theme")=="dark"){changeDark();}

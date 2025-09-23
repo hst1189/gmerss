@@ -15,19 +15,19 @@
     </script>
 </head>
     
-<style>
+<style>    
 body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
-#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
-#footer{margin-top:64px; text-align: center;font-size: small;}
-
-.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;}
-.avatar:hover{transform: scale(1.15) rotate(360deg);}
-
-#header h1 a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-family:Monaco;margin-left:8px;}
-
-.title-right{display:flex;margin:auto 0 0 auto;}
-.title-right .circle{padding: 14px 16px;margin-right:8px;}
+header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+footer{margin-top:64px; text-align: center;font-size: small;}
+.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;cursor: pointer;}
+.avatar:hover{transform: scale(1.2) rotate(360deg);}
+.title-left{display:flex;flex-direction:row;margin:auto auto 0 0;}
+.title-left .blogTitle{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
+.title-right{display:flex;flex-direction:row;margin:auto 0 0 auto;}
 .title-right button{margin-right:8px;padding:16px;}
+.title-right .circle{padding: 14px 16px;}
+.title-right ul{list-style-type: none;}
+.title-right ul li{display: inline;}
 
 .subnav-search{width:222px;margin-top:8px;margin-right:8px;}
 .subnav-search-input{width:160px;border-top-right-radius:0px;border-bottom-right-radius:0px;}
@@ -49,13 +49,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 .listLabels object{max-height:16px;max-width:24px;}
 
 @media (max-width: 767px) {
-    body { padding: 8px;}
-    h1 a{font-size:24px;}
+    body {margin:0; padding: 8px;}
+    header{display:flex;flex-direction:column;margin:auto auto 5px auto;}
+    .avatar {width:36px;height:36px;}
+    .title-left{display:flex;flex-direction:row;margin:auto 10px;}
+    .title-left .blogTitle{color:inherit;text-decoration:none;font-size: 24px;font-family:Monaco;padding-left:10px}
+    .title-right{display:flex;flex-direction:row;justify-content: space-evenly; margin:auto 0;}
     .LabelTime{display:none;}
     .subTitle{display:none;}
-    .blogTitle{display:none;}
     .genTime{float: none;}
-    .avatar {width:40px;height:40px;}
 }
 
 html {    
@@ -64,43 +66,45 @@ html {
 }
 
 /* 主体布局 */
-        body {
-            min-width: 200px;
-            max-width: 885px;
-            margin: 30px auto;   /*设置所有外边距离 */
-            font-size: 16px;
-            font-family: sans-serif;
-            line-height: 1.25;
-            background: rgba(237, 239, 233, 0.84); 
-            border-radius: 10px; /* 圆角边框 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 添加阴影 */
-            overflow: auto;
-        }
+body {
+    min-width: 200px;
+    max-width: 885px;
+    margin: 30px auto;   /*设置所有外边距离 */
+    font-size: 16px;
+    font-family: sans-serif;
+    line-height: 1.25;
+    background: rgba(237, 239, 233, 0.84); 
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 添加阴影 */
+    overflow: auto;
+}
 
-        /* 主页博客列表圆角边框 */
-        .SideNav {
-            background: rgba(255, 255, 255, 0.6); /* 白色背景，透明度60% */
-            border-radius: 10px; /* 圆角边框 */
-            min-width: unset;
-        }
+/* 主页博客列表圆角边框 */
+.SideNav {
+    background: rgba(255, 255, 255, 0.6); /* 白色背景，透明度60% */
+    border-radius: 10px; /* 圆角边框 */
+    min-width: unset;
+}
 
-        /* 鼠标放到博客标题后会高亮 */
-        .SideNav-item:hover {
-            background-color: #c3e4e3;
-            border-radius: 10px;
-            transform: scale(1.04);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
+/* 鼠标放到博客标题后会高亮 */
+.SideNav-item:hover {
+    background-color: #c3e4e3;
+    border-radius: 10px;
+    transform: scale(1.04);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
 
-        .SideNav-item {
-            transition: 0.1s;
-        }
+.SideNav-item {
+    transition: 0.1s;
+}
+
 </style>
     
 <body>
-    <div id="header">
+    <header id="header">
+        <nav class="title-left">
         <h1><img src="../avatar.png" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">小饅頭のRSS收藏夹</a></h1>
-
+        </nav>
         <!--
         <div class="title-right">
             <a class="btn btn-invisible circle" href="https://blog.grapehut.xyz" id="buttonHome" title="首页">
@@ -117,9 +121,9 @@ html {
             </a>
         </div>
         -->
-        
         <!--<span class="tagTitle"><span>Loading</span><span class="AnimatedEllipsis"></span></span>-->
-        <div class="title-right">
+        
+        <nav class="title-right">
             <div class="subnav-search">
                 <input type="search" class="form-control subnav-search-input float-left" aria-label="Search site" value="" style="height:32px;">
                 <button class="btn float-left" type="submit" onclick="javascript:searchShow()">搜索</button>
@@ -131,20 +135,20 @@ html {
             <a class="btn btn-invisible circle" onclick="modeSwitch()" style="display:none;" title="切换主题">
                 <svg class="octicon" width="16" height="16" ><path id="themeSwitch" fill-rule="evenodd"></path></svg>
             </a>
-        </div>
-    </div>
+        </nav>
+    </header>
     
-    <div id="content">
-        <div id="taglabel" style="margin-bottom:8px;"></div>
-        <div style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></div>
-        <nav class="SideNav border"></nav>
-        <div class="notFind" style="display:none;font-size:24px;margin:8px;">Not Find</div>
-    </div>
+    <main id="content">
+        <section id="taglabel" style="margin-bottom:8px;"></section>
+        <section style="margin-bottom: 16px;"><span class="subTitle">RSS-Reader All in Github</span><span class="genTime"></span></section>
+        <section class="SideNav border"></section>
+        <section class="notFind" style="display:none;font-size:24px;margin:8px;">Not Found</section>
+    </main>
 
-    <div id="footer">
+    <footer id="footer">
         <div id="footer1">Copyright © 2024-2025 <span id="copyrightYear"></span> <a href="https://www.grapehut.xyz">小饅頭の部屋</a> All Rights Reserved.</div>
         <div id="footer2"><span id="filingNum"><a href='https://icp.gov.moe/?keyword=20241189' target='_blank'>萌ICP备20241189号</a> • Powered by<a href='https://github.com/Meekdai/Gmerss' target='_blank'> Gmerss</a></span></div>
-    </div>    
+    </footer>    
 </body>
 
 
@@ -378,7 +382,7 @@ function searchShow(){
     if(a==0){
         let notFind=document.getElementsByClassName("notFind")[0];
         notFind.style.display='block';
-        notFind.innerHTML='Not Find "'+searchInput+'"';
+        notFind.innerHTML='Sorry! Not Found "'+searchInput+'"';
     }
     else{document.getElementsByClassName("notFind")[0].style.display='none';}
 }

@@ -1,4 +1,4 @@
-rssBase={
+{
     "不死鸟 - 分享为王":{
         "url":"https://iui.su/feed",
         "type":"post",
@@ -110,4 +110,8 @@ rssBase={
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#ffd700"
     }
+
+
+
+    
 }

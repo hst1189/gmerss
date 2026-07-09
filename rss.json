@@ -12,7 +12,14 @@
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#7FFFD4"
     },
- 
+
+    "开发者周报":{
+        "url":"https://dev.com.cn/feed",
+        "type":"weekly",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
+        "nameColor":"#FF00D4"
+    },
+    
     "猫鱼周刊":{
         "url":"https://ameow.xyz/feed/categories/weekly.xml",
         "type":"weekly",

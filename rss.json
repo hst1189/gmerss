@@ -5,12 +5,12 @@
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#ff96b4"
     },
-
-    "独立开发者出海周刊":{
-        "url":"https://gap.weijunext.com/rss.xml",
-        "type":"post",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#ff6347"
+    
+    "小众软件":{
+        "url":"https://feeds.appinn.com/appinns/",
+        "type":"daily",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#7FFFD4"
     },
  
     "猫鱼周刊":{
@@ -26,20 +26,6 @@
         "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
         "nameColor":"#F0E68C"
     },
-
-    "老胡的周刊":{
-        "url":"https://weekly.howie6879.com/rss/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#DEB887"
-    },
-    
-    "阮一峰":{
-        "url":"http://www.ruanyifeng.com/blog/atom.xml",
-        "type":"weekly",
-        "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
-        "nameColor":"#B0E0E6"
-    },
      
     "HelloGitHub月刊":{
         "url":"https://hellogithub.com/rss",
@@ -54,33 +40,12 @@
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#87CEFA"
     },
-
-    "小众软件":{
-        "url":"https://feeds.appinn.com/appinns/",
-        "type":"daily",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#7FFFD4"
-    },
     
     "Portable Apps":{
         "url":"https://feeds.feedburner.com/portableapps_com",
         "type":"daily",
         "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
         "nameColor":"#6495ED"
-    },
-
-    "不上班研究所":{
-        "url":"https://www.toocool.cc/feed",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
-        "nameColor":"#ff7f50"
-    },
-
-    "独立开发变现":{
-        "url":"https://www.ezindie.com/feed/rss.xml",
-        "type":"weekly",
-        "timeFormat":"%a, %d %b %Y %H:%M:%S GMT",
-        "nameColor":"#ffefd5"
     },
         
     "豌豆花下猫":{

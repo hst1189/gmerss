@@ -68,6 +68,13 @@
         "timeFormat":"%Y-%m-%dT%H:%M:%SZ",
         "nameColor":"#00CCCC"
     },
+
+    "gihyo.jp":{
+        "url":"https://gihyo.jp/feed/rss2",
+        "type":"post",
+        "timeFormat":"%a, %d %b %Y %H:%M:%S %z",
+        "nameColor":"#BB00CC"
+    },
     
     "Qiita_kjm_nuco":{
         "url":"https://qiita.com/kjm_nuco/feed.atom",
